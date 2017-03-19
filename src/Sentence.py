@@ -1,4 +1,4 @@
-from random import randint
+import random
 from .CoveredSentence import CoveredSentence
 
 class Sentence:
@@ -12,8 +12,7 @@ class Sentence:
     def _getRandom(self):
         with open("sentences.txt") as sentencesFile:
             sentences = sentencesFile.read().split("\n")
-            randomIndex = randint(0, len(sentences))
-            return sentences[randomIndex]
+            random.choice(sentences)
 
     def isLetterOccurrs(self, givenLetter):
         return givenLetter.lower() in self.content.lower()
